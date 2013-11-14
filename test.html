@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<style>
+		body { font: normal 12px "Sans Serif"; }
+	</style>
+	<title>relatime.js</title>
+	<script type="text/javascript" src="relatime.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			relatime.setup({refresh:1});
+			relatime.start();
+			document.getElementById('add').onclick=function(){
+				var d = document.getElementById('date').value,
+				    l = document.createElement('li');
+				l.innerHTML = relatime.html(d);
+				document.getElementById('list').appendChild(l);
+			};
+			var d = new Date();
+			document.getElementById('date').value = d.toISOString();
+			['de','fr','en'].forEach(function(l){
+				document.getElementById(l).onclick = function(){ 
+					relatime.locale(l);
+				}
+			});
+		};
+	</script>
+</head>
+<body>
+	<div>
+		<input id="date" type="text" /><input id="add" type="button" value="add" />
+		<input id="de" type="button" value="de" />
+		<input id="fr" type="button" value="fr" />
+		<input id="en" type="button" value="en" />
+	</div>
+	<ul id="list">
+		<li><span class="relatime" data-date="2013-11-14T12:00:00.000Z">...</span></li>
+		<li><span class="relatime" data-date="2013-11-13T12:00:00.000Z">...</span></li>
+		<li><span class="relatime" data-date="2013-11-04T12:00:00.000Z">...</span></li>
+		<li><span class="relatime" data-date="2013-10-30T12:00:00.000Z">...</span></li>
+		<li><span class="relatime" data-date="2013-10-04T12:00:00.000Z">...</span></li>
+		<li><span class="relatime" data-date="2013-06-14T12:00:00.000Z">...</span></li>
+	</ul>
+</body>
+</html>
