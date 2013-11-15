@@ -9,7 +9,6 @@
 	<script type="text/javascript" src="relatime.js"></script>
 	<script type="text/javascript">
 		window.onload=function(){
-			relatime.setup({refresh:1});
 			relatime.start();
 			document.getElementById('add').onclick=function(){
 				var d = document.getElementById('date').value,
@@ -35,12 +34,12 @@
 		<input id="en" type="button" value="en" />
 	</div>
 	<ul id="list">
-		<li><span class="relatime" data-date="2013-11-14T12:00:00.000Z">...</span></li>
-		<li><span class="relatime" data-date="2013-11-13T12:00:00.000Z">...</span></li>
-		<li><span class="relatime" data-date="2013-11-04T12:00:00.000Z">...</span></li>
-		<li><span class="relatime" data-date="2013-10-30T12:00:00.000Z">...</span></li>
-		<li><span class="relatime" data-date="2013-10-04T12:00:00.000Z">...</span></li>
-		<li><span class="relatime" data-date="2013-06-14T12:00:00.000Z">...</span></li>
+		<li><time class="relatime" datetime="2013-11-14T12:00:00.000Z">...</time></li>
+		<li><time class="relatime" datetime="2013-11-13T12:00:00.000Z">...</time></li>
+		<li><time class="relatime" datetime="2013-11-04T12:00:00.000Z">...</time></li>
+		<li><time class="relatime" datetime="2013-10-28T12:00:00.000Z">...</time></li>
+		<li><time class="relatime" datetime="2013-06-04T12:00:00.000Z">...</time></li>
+		<li><time class="relatime" datetime="2011-06-14T12:00:00.000Z">...</time></li>
 	</ul>
 </body>
 </html>
