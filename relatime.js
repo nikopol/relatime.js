@@ -8,33 +8,35 @@ display dates in a relative form and automatically update them every minutes.
 methods:
 
 setup(opt)      setup relatime parameters :
-                  opt.locale     (by default navigator.language or en)
+                  opt.locale     see locale(lang) below
                   opt.tag        (by default "time")
                   opt.classname  tag.classname (by default "relatime")
                   opt.refresh    auto-updates interval in seconds (by default 60)
 
-locale('fr')    force locale. actually en/fr/de are supported
+locale('fr')    force locale. by default navigator language or en.
+                actually en/fr/de/es are supported.
 
-locale()        return the current locale
+locale()        return the current locale.
 
-start()         start the auto-update of displayed dates
+start()         start the auto-update of displayed dates.
                 by default auto-updates are automatically started
-                when html(date) is called
+                when html(date) is called.
 
-start(opt)      same shit but with setup option provided
+start(opt)      same shit but with setup option provided.
 
-stop()          stop the auto-update of displayed dates
+stop()          stop the auto-update of displayed dates.
 
-started()       return true if auto-update is started
+started()       return true if auto-update is started.
 
 text(date)      return a relative representation of date
-                date can be a string or a Date object
+                date can be a string or a Date object.
                 eg: "one hour ago"
 
 html(date)      return a relative representation of date
-                embedded in an auto-updated span
-                date can be a string or a Date object
-                eg: "<time class="relatime" datetime="2013-11-14T13:24:43.310Z" title="11/14/2013, 2:24:43 PM">one hour ago</span>"
+                embedded in an auto-updated time tag.
+                date can be a string or a Date object.
+                eg: "<time class="relatime" datetime="2013-11-14T13:24:43.310Z"
+                      title="11/14/2013, 2:24:43 PM">one hour ago</time>"
 
 */
 
@@ -68,6 +70,15 @@ var relatime = (function(){
 			week: {s:'vor einer Woche',p:'vor %d Wochen'},
 			month: {s:'vor einem Monat',p:'vor %d Monaten'},
 			year: {s:'vor einem Jahr',p:'vor %d Jahren'}
+		},
+		es: {
+			now: "ahora mismo",
+			min: {s:'hace un minuto',p:'hace %d minutos'},
+			hour: {s:'hace una hora',p:'hace %d horas'},
+			day: {s:'ayer',p:'hace %d días'},
+			week: {s:'hace una semana',p:'hace %d semanas'},
+			month: {s:'el mes pasado',p:'hace %d meses'},
+			year: {s:'hace un año',p:'hace %d años'}
 		}
 	},
 	loc = 'en',
