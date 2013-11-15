@@ -18,7 +18,7 @@
 			};
 			var d = new Date();
 			document.getElementById('date').value = d.toISOString();
-			['de','fr','en'].forEach(function(l){
+			['de','fr','en','es'].forEach(function(l){
 				document.getElementById(l).onclick = function(){ 
 					relatime.locale(l);
 				}
@@ -32,6 +32,7 @@
 		<input id="de" type="button" value="de" />
 		<input id="fr" type="button" value="fr" />
 		<input id="en" type="button" value="en" />
+		<input id="es" type="button" value="es" />
 	</div>
 	<ul id="list">
 		<li><time class="relatime" datetime="2013-11-14T12:00:00.000Z">...</time></li>
