@@ -1,5 +1,5 @@
-// relatime.js 0.2 - relative date time display and update
-// https://github.com/nikopol/reltime.js
+// relatime.js 0.2 - relative date time auto updated display
+// https://github.com/nikopol/relatime.js
 // niko 2013
 
 /*
@@ -116,7 +116,7 @@ var relatime = (function(){
 		while( i<nl.length ) {
 			e = nl[i];
 			d = e.getAttribute('datetime');
-			if(d) e.innerText = text(d);
+			if(d) e.innerHTML = text(d);
 			++i;
 		}
 	},

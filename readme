@@ -1,5 +1,5 @@
 relatime.js 0.2
-relative date time display and update.
+===============
 
 display dates in a relative form and automatically update them every minutes.
 
@@ -10,6 +10,7 @@ setup(opt)      setup relatime parameters :
                   opt.tag        (by default "time")
                   opt.classname  tag.classname (by default "relatime")
                   opt.refresh    auto-updates interval in seconds (by default 60)
+                  
 
 locale('fr')    force locale. by default navigator language or en.
                 actually en/fr/de/es are supported.
@@ -35,6 +36,5 @@ html(date)      return a relative representation of date
                 date can be a string or a Date object.
                 eg: "<time class="relatime" datetime="2013-11-14T13:24:43.310Z"
                       title="11/14/2013, 2:24:43 PM">one hour ago</time>"
-
 
 look at test.html to have some sample usages.
